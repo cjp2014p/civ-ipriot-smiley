@@ -330,7 +330,7 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   3. **Simple Method to Change Colors:**
   4. What is the easiest way you can think to change the smileys to green? Easiest, not necessarily the best!
-     > Your answer here
+     > Change the first value in the YELLOW tuple to `0`. (Chaotic idea though.)
 
   Here's a revised version of the "Flexible Colors – Step 1" section for the smiley project, incorporating your specifications for formatting and content updates:
 
@@ -360,8 +360,9 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   4. **Bulk rename:** We want to update our grid to use the value of complexion, but we have so many `Y`'s in the grid. Use your IDE's refactoring tool to rename all instances of the **symbol** `Y` to `X`. Where `X` is the value of the `complexion` variable. Include a screenshot evidencing you have found the correct refactor tool and the changes made.
 
-  ![Bulk Rename](screenshots/bulk_rename.png)
-
+  ![Bulk Rename](screenshots/Screenshot_3-3-iv.png)
+  ![Bulk Rename](screenshots/Screenshot_3-3-iv-b.png)
+- 
   5. **Update the `complexion` method:** Adjust this method to return `self.my_complexion`, ensuring that whatever color is assigned during instantiation is what the smiley displays.
 
   6. **Verification:** Run the updated code to confirm that Smileys still defaults to yellow unless specified otherwise.
