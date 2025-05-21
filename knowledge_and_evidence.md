@@ -161,12 +161,12 @@ python3 main.py
   
   Use the following table for your answers:
 
-| Class Name | Super or Sub? | Direct parent(s) |
-|------------|---------------|------------------|
-| Smiley     | Super         | N/A              |
-| Blinkable  | Sub           | ABC              |
-| Sad        | Sub           | Smiley           |
-| Happy      | Sub           | Smiley, Blinkable              |
+| Class Name | Super or Sub? | Direct parent(s)  |
+|------------|---------------|-------------------|
+| Smiley     | Super         | object            |
+| Blinkable  | Sub           | ABC               |
+| Sad        | Sub           | Smiley            |
+| Happy      | Sub           | Smiley, Blinkable |
 
 
 2. Explain the concept of abstraction, giving an example from the project (note "implementing an ABC" is **not** in itself an example of abstraction). (Max 150 words)
@@ -213,7 +213,12 @@ Compare and contrast the classes Happy and Sad.
    > Smiley
    >
 3. Discuss the hiding of the SenseHAT in terms of encapsulation (100-200 Words)
-   > Your answer here
+   > By encapsulating SenseHAT data and methods within a class `SenseHat` in a separate module `sense_hat`, those 
+   > elements are hidden from view. This prevents accidental or intentional editing of the code from outside the module 
+   > and helps to simplify code maintenance. 
+   > The `sense_hat.low_light` property and `sense_hat.set_pixels()` method from `SenseHat` have been accessed in
+   > the Smiley class. Modifying and using these in the `Smiley` class will not impact the reusability of `SenseHat` in 
+   > other parts of the code. 
    >
 
 ### 2.7. Sad Smileys Can’t Blink (Or Can They?)
@@ -224,22 +229,29 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
 
 1. Does the code's author believe that every `Smiley` should be able to blink? Explain.
 
-> Your answer here
+> The author does not believe that every `Smiley` should be able to blink, as they have put the `blink` method in a 
+> separate class that is not referenced in every implementation of `Smiley`.
 >
 
 2. For those smileys that blink, does the author expect them to blink in the same way? Explain.
 
-> Your answer here
->
+> The smileys that blink, currently, are only `Happy`. The author expects all instances of this class to blink in the same 
+> way as they have hardset the value of the delay attribute within the blink method. The blink will last `0.25`. 
+> 
 
 3. Referring to the implementation of blink in the Happy and Sad Smiley classes, give a brief explanation of what polymorphism is.
 
-> Your answer here
+> Polymorphism is when objects have a comparable shape that can take many forms. In reference to `blink`: 
+> The Happy class claims to be blinkable and is an example of subclass polymorphism. It contains the `blink` method 
+> inherited from `Blinkable`. Conversely, the Sad Smiley class does not reference the `Blinkable` class or contain a 
+> `blink` method.
 >
 
 4. How is inheritance used in the blink method, and why is it important for polymorphism?
 
-> Your answer here
+> The blink method is an abstract method, that is inherited by and can be defined in the subclass. Here, Happy has to have a 
+> blink method because it is a subclass of Blinkable, but can define the specific behaviour of that method to suit 
+> itself, making it an example of polymorphism.
 >
 1. **Implement Blink in Sad Class:**
 
@@ -258,7 +270,7 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
 
 Include a screenshot of the sad smiley or the modified `main.py`:
 
-![Sad Smiley Blinking](screenshots/sad_blinking.png)
+![Sad Smiley Blinking](screenshots/Screenshot_2-7-x-3.png)
 
 - Observe and document the Sad smiley as it blinks its eyes. Describe any adjustments or issues encountered during implementation.
 

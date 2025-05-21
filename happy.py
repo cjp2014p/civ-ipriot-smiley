@@ -32,8 +32,8 @@ class Happy(Smiley, Blinkable):
 
     def blink(self, delay=0.25):
         """
-       Blinks the smiley's eyes once
-        
+        Blinks the smiley's eyes once
+
         :param delay: Delay between blinks (in seconds)
         """
         self.draw_eyes(wide_open=False)
