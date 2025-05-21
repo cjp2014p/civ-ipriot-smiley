@@ -274,7 +274,7 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
 - Observe and document the Sad smiley as it blinks its eyes. Describe any adjustments or issues encountered during implementation.
 
-  > Your answer here
+  > You have to make sure to import the Sad class into main.
 
   ### 2.8. If It Walks Like a Duck…
 
@@ -282,23 +282,30 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   1. **Class Type Analysis:** What kind of class is `Blinkable`? Inspect its superclass for clues about its classification.
 
-     > Your answer here
+   > Abstract Base Class
 
   2. **Class Implementation:** `Blinkable` is a class intended to be implemented by other classes. What generic term describes this kind of class, which is designed for implementation by others? **Clue**: Notice the lack of any concrete implementation and the naming convention.
 
-  > Your answer here
+  > Interface
 
   3. **OO Principle Identification:** Regarding your answer to question (2), which Object-Oriented (OO) principle does this represent? Choose from the following and justify your answer in 1-2 sentences: Abstraction, Polymorphism, Inheritance, Encapsulation.
 
-  > Your answer here
+  > Abstraction. `Blinkable` contains an abstract method (a method without concrete implementation), that will have to 
+  > be defined by any instantiated child classes that inherit from `Blinkable`; the `Blinkable` class defines a contract 
+  > for those classes. This interface simplification is a key concept of abstraction. 
+  > 
 
   4. **Implementation Flexibility:** Explain why you could grant the Sad Smiley a blinking feature similar to the Happy Smiley's implementation, even without directly using `Blinkable`.
 
-  > Your answer here
+  > I could grant the Sad Smiley a blinking feature similar to the Happy Smiley's implementation without directly using Blinkable 
+  > because nothing in the Blinkable class references or contains code that cannot also be defined in or called directly from the Sad class.
 
   5. **Concept and Language Specificity:** In relation to your response to question (4), what is this capability known as, and why is it feasible in Python and many other dynamically typed languages but not in most statically typed programming languages like C#? **Clue** This concept is hinted at in the title of this section.
 
-  > Your answer here
+  > This is known as duck typing - 
+  > you do not need to know the class/type of the object in order to call a method, as long as the object has it.
+  > This works in Python and most dynamically typed languages because unlike static languages (C#), they can change 
+  > types on the fly. 
 
   ***
 
@@ -311,9 +318,9 @@ Include a screenshot of the sad smiley or the modified `main.py`:
   1. **Defined Colors and Their Location:**
 
      1. Which colors are defined and in which class(s)?
-        > Your answer here
+        > White, green, red, yellow, and blank, are defined in the Smiley class (and inherited by its subclasses)
      2. What type of variables hold these colors? Are the values expected to change during the program's execution? Explain your answer.
-        > Your answer here
+        > Tuples. No, the values are not expected to change - if the values within the tuple change, they are not longer accurate to the variable's name. (Not the colour described.)
      3. Add the color blue to the appropriate class using the appropriate format and values.
 
   2. **Usage of Color Variables:**
