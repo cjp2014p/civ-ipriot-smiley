@@ -6,8 +6,10 @@ import time
 
 from happy import Happy
 from sad import Sad
+from angry import Angry
 
 def main():
+# Start Happy Smiley
     smiley = Happy()
 
     smiley.show()
@@ -16,7 +18,17 @@ def main():
 
     smiley.blink()
 
+# Start Sad Smiley
     smiley = Sad()
+
+    smiley.show()
+
+    time.sleep(1)
+
+    smiley.blink()
+
+# Start Angry Smiley
+    smiley = Angry()
 
     smiley.show()
 
