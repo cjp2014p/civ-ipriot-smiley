@@ -113,7 +113,7 @@ python3 main.py
    1. What is the purpose of a constructor (in general) and this one (in particular)?
 
    > A constructor passes information to each new instance. 
-   > This constructor calls the `__init__` methods inherited from the `Smiley` class as well as 
+   > This constructor calls the `__init__` method variables inherited from the `Smiley` class as well as 
    > `draw_mouth()` and `draw_eyes()` methods. (`Blinkable` does not have an `__init__` method currently.)
    >
 
@@ -125,7 +125,7 @@ python3 main.py
    > `self.sense_hat = SenseHat()`
    > `Y = self.YELLOW`
    > `O = self.BLANK`
-   > `self.pixels = `[etc...]
+   > `self.pixels = [...]`
    > 
    > The result: renders a happy face in SenseHat.
 
@@ -192,16 +192,16 @@ python3 main.py
 Compare and contrast the classes Happy and Sad.
 
 1. What is the key difference between the two classes?
-   > The mouth variable has different values
+   > The `mouth` variable has different values
    >
 2. What are the key similarities?
-   > They both have draw_mouth and draw_eyes methods
+   > They both have `draw_mouth` and `draw_eyes` methods
    >
 3. What difference stands out the most to you and why?
-   > Happy inherits from the Blinkable class
+   > `Happy` inherits from the `Blinkable` class, `Sad` does not.
    >
 4. How does this difference affect the functionality of these classes
-   > Happy makes the SenseHat 'blink', Sad does not have this functionality.
+   > `Happy` has to have a function to make the `SenseHat` 'blink', `Sad` does not.
    >
 
 ### 2.6. Where is the Sense(Hat) in the code?
@@ -216,7 +216,7 @@ Compare and contrast the classes Happy and Sad.
    > By encapsulating SenseHAT data and methods within a class `SenseHat` in a separate module `sense_hat`, those 
    > elements are hidden from view. This prevents accidental or intentional editing of the code from outside the module 
    > and helps to simplify code maintenance. 
-   > The `sense_hat.low_light` property and `sense_hat.set_pixels()` method from `SenseHat` have been accessed in
+   > Elements of SenseHAT can be called from outside the module: the `sense_hat.low_light` property and `sense_hat.set_pixels()` method from `SenseHat` have been accessed in
    > the Smiley class. Modifying and using these in the `Smiley` class will not impact the reusability of `SenseHat` in 
    > other parts of the code. 
    >
@@ -230,13 +230,13 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
 1. Does the code's author believe that every `Smiley` should be able to blink? Explain.
 
 > The author does not believe that every `Smiley` should be able to blink, as they have put the `blink` method in a 
-> separate class that is not referenced in every implementation of `Smiley`.
+> separate class that is not referenced in `Smiley`.
 >
 
 2. For those smileys that blink, does the author expect them to blink in the same way? Explain.
 
-> The smileys that blink, currently, are only `Happy`. The author expects all instances of this class to blink in the same 
-> way as they have hardset the value of the delay attribute within the blink method. The blink will last `0.25`. 
+> The smileys that blink, currently, are only `Happy`. The author does not expect all instances of this class to blink in the same 
+> way as each instance can specify the value of `delay` within the blink method.
 > 
 
 3. Referring to the implementation of blink in the Happy and Sad Smiley classes, give a brief explanation of what polymorphism is.
@@ -249,8 +249,8 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
 
 4. How is inheritance used in the blink method, and why is it important for polymorphism?
 
-> The blink method is an abstract method, that is inherited by and can be defined in the subclass. Here, Happy has to have a 
-> blink method because it is a subclass of Blinkable, but can define the specific behaviour of that method to suit 
+> The blink method is an abstract method, that is inherited by and can be defined in the subclass. Here, `Happy` has to have a 
+> blink method because it is a subclass of `Blinkable`, but can define the specific behaviour of that method to suit 
 > itself, making it an example of polymorphism.
 >
 1. **Implement Blink in Sad Class:**
@@ -274,7 +274,7 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
 - Observe and document the Sad smiley as it blinks its eyes. Describe any adjustments or issues encountered during implementation.
 
-  > You have to make sure to import the Sad class into main.
+  > You have to make sure to import the `Sad` class into `main.py`.
 
   ### 2.8. If It Walks Like a Duck…
 
