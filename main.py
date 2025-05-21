@@ -8,6 +8,14 @@ from happy import Happy
 from sad import Sad
 
 def main():
+    smiley = Happy()
+
+    smiley.show()
+
+    time.sleep(1)
+
+    smiley.blink()
+
     smiley = Sad()
 
     smiley.show()

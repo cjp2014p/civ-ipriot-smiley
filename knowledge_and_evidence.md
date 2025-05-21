@@ -326,7 +326,7 @@ Include a screenshot of the sad smiley or the modified `main.py`:
   2. **Usage of Color Variables:**
 
      1. In which classes are the color variables used?
-        > Your answer here
+        > Smiley, Happy, Sad.
 
   3. **Simple Method to Change Colors:**
   4. What is the easiest way you can think to change the smileys to green? Easiest, not necessarily the best!
