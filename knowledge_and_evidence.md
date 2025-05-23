@@ -55,6 +55,8 @@ Address the following tasks and questions based on the code provided in this rep
 
 ![Local Execution (INSERT YOUR SCREENSHOT)](screenshots/screenshot_2-1-4-a.png)
 
+![Local Execution (INSERT YOUR SCREENSHOT)](screenshots/screenshot_2-1-4-b.png)
+
 If you are running on a Raspberry Pi, you can use the following command to run the project and then screenshot the result:
 
 ```bash
