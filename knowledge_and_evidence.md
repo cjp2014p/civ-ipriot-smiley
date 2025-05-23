@@ -216,9 +216,11 @@ Compare and contrast the classes Happy and Sad.
    > By encapsulating SenseHAT data and methods within a class `SenseHat` in a separate module `sense_hat`, those 
    > elements are hidden from view. This prevents accidental or intentional editing of the code from outside the module 
    > and helps to simplify code maintenance. 
-   > Elements of SenseHAT can be called from outside the module: the `sense_hat.low_light` property and `sense_hat.set_pixels()` method from `SenseHat` have been accessed in
-   > the Smiley class. Modifying and using these in the `Smiley` class will not impact the reusability of `SenseHat` in 
-   > other parts of the code. 
+   > Elements of SenseHAT can be called from outside the module: the `sense_hat.low_light` property and 
+   > `sense_hat.set_pixels()` method from `SenseHat` have been accessed in the Smiley class.
+   > Modifying and using these in the `Smiley` class would not impact the reusability of `SenseHat` in 
+   > other parts of the code. In this program, `Smiley` is the only class that contains direct references to SenseHAT; 
+   > other modules can import from `Smiley` to execute SenseHAT code without knowing SenseHAT exists.  
    >
 
 ### 2.7. Sad Smileys Can’t Blink (Or Can They?)
@@ -236,7 +238,10 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
 2. For those smileys that blink, does the author expect them to blink in the same way? Explain.
 
 > The smileys that blink, currently, are only `Happy`. The author does not expect all instances of this class to blink in the same 
-> way as each instance can specify the value of `delay` within the blink method.
+> way as each instance can specify the value of `delay` within the blink method. 
+> If other smileys are to blink, the 
+> author does not expect them to blink in the same way; `blink` does not have an implementation in the `Blinkable` class, only 
+> an abstract method that returns `pass`; leaving it open for each smiley type to be coded to blink differently.
 > 
 
 3. Referring to the implementation of blink in the Happy and Sad Smiley classes, give a brief explanation of what polymorphism is.
@@ -304,8 +309,9 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   > This is known as duck typing - 
   > you do not need to know the class/type of the object in order to call a method, as long as the object has it.
-  > This works in Python and most dynamically typed languages because unlike static languages (C#), they can change 
-  > types on the fly. 
+  > This works in Python and most dynamically typed languages because unlike static languages (C#), they will respond
+  > by using context to run the code, without first verifying if the object is a specific type.
+  > 
 
   ***
 
